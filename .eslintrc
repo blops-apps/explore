@@ -1,0 +1,17 @@
+{
+    "parser": "babel-eslint",
+  
+    "plugins": [
+      "html",
+      "flowtype-errors"
+    ],
+  
+    "extends": [
+      "vue"
+    ],
+  
+    "rules": {
+      "flowtype-errors/show-errors": 2,
+      "prefer-const": 0
+    }
+  }
