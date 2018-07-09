@@ -1,24 +1,42 @@
 <template>
   <div class="histogram">
-  <donut :chartData="sampleData" :width="300" :height="300"></donut>
-  <histogram :chartData="sampleData" :width="300" :height="300"></histogram>
+  <histogram :chartData="histogramData" :width="300" :height="300"></histogram>
+  <donut :chartData="donutData" :width="300" :height="300"></donut>
+
   </div>
 </template>
 
 <script>
+import ColorPicker from '../models/color_picker';
+
 export default {
   computed: {
-    sampleData() {
+
+    donutData() {
+      const results = this.$store.getters.histogram(1)
       return   {
-        labels: this.$store.getters.histogram(1).keys,
+        labels: results.keys,
         datasets: [
         {
-          data: this.$store.getters.histogram(1).values,
-          backgroundColor: ['teal', 'orange', 'blue']
+          data: results.values,
+          backgroundColor: ColorPicker(results.values)
         }
         ]
       }
-    }
+    },
+    histogramData() {
+      const results = this.$store.state.tableData.categorizedHistogram(0)
+      return   {
+        labels: results.map(c => c.label),
+        datasets: [
+        {
+          data: results.map(c => c.length()),
+          backgroundColor: ColorPicker(results)
+        }
+        ]
+      }
+    },
   }
 }
+
 </script>

@@ -1,3 +1,4 @@
+import { splitCategories } from '../../src/models/categories_splitter'
 export class DataTable {
 
 	constructor(csvLines) {
@@ -10,6 +11,10 @@ export class DataTable {
 
 	histogram(index) {
 		return this.constructor.histogram(this.column(index))
+	}
+
+	categorizedHistogram(index) {
+		return splitCategories(this.column(index), 10)
 	}
 
 	static histogram(ary) {

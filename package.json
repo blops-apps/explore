@@ -31,6 +31,7 @@
     "mocha": "^5.2.0",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.0.1",
+    "save": "^2.3.2",
     "style-loader": "^0.21.0",
     "vue-loader": "^14.2.2",
     "vue-template-compiler": "^2.5.16",
@@ -45,6 +46,7 @@
     "eslint-plugin-flowtype": "^2.49.3",
     "immutable": "^3.8.2",
     "lodash": "^4.17.10",
+    "randomcolor": "^0.5.3",
     "vue": "^2.5.16",
     "vue-chartjs": "^3.3.2",
     "vuex": "^3.0.1"

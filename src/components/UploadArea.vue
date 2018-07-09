@@ -56,7 +56,7 @@ export default {
   background: #EEE;
   color: #444;
   padding: 10px 10px;
-  min-height: 200px; 
+  min-height: 150px; 
   position: relative;
   cursor: pointer;
 }
@@ -64,7 +64,7 @@ export default {
 .input-file {
   opacity: 0; /* invisible but it's there! */
   width: 100%;
-  height: 200px;
+  height: 150px;
   position: absolute;
   cursor: pointer;
 }
